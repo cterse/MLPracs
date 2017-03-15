@@ -11,7 +11,7 @@ public class AttributeRelevanceAnalysis {
     public static void main(String[] args) {
         Scanner t = new Scanner(System.in);
         //System.out.print("Path to dataset: ");
-        String datasetPath = "Dataset/ds1.csv";
+        String datasetPath = "Dataset/ds1_buysComputer.csv";
         
         ParseDataset parse = new ParseDataset(datasetPath);
         //parse.printDataset();

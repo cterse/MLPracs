@@ -222,7 +222,7 @@ public class ParseDataset {
                 attrValuesClassCount.get(attrValues.get(i)).put(classValues.get(i), ++prevCount);
             }
         }
-        System.out.println(attr+" = "+attrValuesClassCount);
+        //System.out.println(attr+" = "+attrValuesClassCount);
         
         return attrValuesClassCount;
     }
@@ -303,6 +303,22 @@ public class ParseDataset {
         return attrTypes;
     }
 
+    public int numberOfValuesOfAttribute(String value, String attr) {
+        //check if the specified attribute is present in dataset
+        if(!this.getAttributesAsList().contains(attr)) {
+            System.out.println("getAttributeEntropy() : specified attribute not in dataset.");
+            System.exit(0);
+        }
+        
+        int count = 0;
+        List<String> attrValues = this.getAttributeValuesAsList(attr);
+        for(int i=0; i<attrValues.size(); i++)
+            if(attrValues.get(i).equals(value))
+                count++;
+        
+        return count;
+    }
+    
     /*
     public static void main(String[] args) {
             // TODO Auto-generated method stub
